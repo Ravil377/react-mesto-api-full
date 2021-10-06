@@ -1,0 +1,21 @@
+.popup__container-input-title {
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    width: 358px;
+    height: 27px;
+    margin-top: 54px;
+    font-size: 0.87rem;
+    font-style: normal;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .popup__container-input-title {
+        margin-top: 75px;
+        width: 238px;
+        height: 14px;
+    }
+}

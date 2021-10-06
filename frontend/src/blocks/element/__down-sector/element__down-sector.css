@@ -1,0 +1,13 @@
+.element__down-sector {
+    padding: 0;
+    position: relative;
+    margin: 0;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    margin-left: 21px;
+    margin-right: 21px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

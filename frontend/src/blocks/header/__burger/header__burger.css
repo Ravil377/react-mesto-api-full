@@ -1,0 +1,17 @@
+.header__burger {
+    display: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: opacity .5s;
+}
+
+.header__burger:hover {
+    opacity: .6;
+}
+
+@media screen and (max-width: 444px) {
+    .header__burger {
+        display: block;
+    }
+}

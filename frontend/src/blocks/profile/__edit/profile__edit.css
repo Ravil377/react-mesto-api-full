@@ -1,0 +1,5 @@
+.profile__edit {
+    grid-area: button;
+    align-self: center;
+    justify-self: end;
+}

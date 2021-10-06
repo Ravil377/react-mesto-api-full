@@ -1,0 +1,10 @@
+.profile__title {
+    grid-area: title;
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 500px;
+    margin-right: 25px;
+}

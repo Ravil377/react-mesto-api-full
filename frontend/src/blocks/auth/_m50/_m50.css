@@ -1,0 +1,9 @@
+._mp50 {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 444px) {
+    ._mp50 {
+        margin-top: 40px;
+    }
+}

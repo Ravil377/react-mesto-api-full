@@ -1,0 +1,12 @@
+._white {
+   font-size: 1.7rem;
+   margin: 0;
+   text-align: center;
+   color: #FFFFFF;
+}
+
+@media screen and (max-width: 444px) {
+   ._white {
+      font-size: 1.42rem;
+   }
+}

@@ -1,0 +1,9 @@
+._black {
+    color: white;
+    background-color: black;
+    border-bottom: 2px solid rgba(204, 204, 204, 0.2);
+}
+
+._black::placeholder {
+    color: #cccccc;
+}

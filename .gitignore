@@ -1,0 +1,39 @@
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+/backend/node_modules
+/frontend/node_modules
+
+/node_modules
+
+/backend/*.log
+/backend/*.env
+/backend/npm-debug.log*
+
+/frontend/*.log
+
+# Optional npm cache directory
+.npm
+
+# The file containing environment variables
+.env
+
+# Optional REPL history
+/backend/*.DS_Store
+/backend/*.DS_Store
+/frontend/*.DS_Store
+*.DS_Store
+.DS_Store
+/frontend/.idea
+/backend/.idea
+/backend/.vscode
+/frontend/.vscode
+.vscode
+*.vscode
+
+/backend/.http.DS_Store
+/frontend/.http.DS_Store

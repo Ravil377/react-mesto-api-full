@@ -1,0 +1,78 @@
+@import url(./vendor/normalize.css);
+@import url(./fonts/inter.css);
+
+@import url(./blocks/root/root.css);
+@import url(./blocks/page/page.css);
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__top/header__top.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__auth/header__auth.css);
+@import url(./blocks/header/__burger/header__burger.css);
+@import url(./blocks/header/__burger-auth/header__burger-auth.css);
+
+@import url(./blocks/main/main.css);
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__avatar-overlay/profile__avatar-overlay.css);
+@import url(./blocks/profile/__avatar-icon/profile__avatar-icon.css);
+@import url(./blocks/profile/__title/profile__title.css);
+@import url(./blocks/profile/__edit/profile__edit.css);
+@import url(./blocks/profile/__subtitle/profile__subtitle.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__title-text/profile__title-text.css);
+
+@import url(./blocks/gallery/gallery.css);
+
+@import url(./blocks/elements/elements.css);
+
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__like/element__like.css);
+@import url(./blocks/element/__like-count/element__like-count.css);
+@import url(./blocks/element/__image/element__image.css);
+@import url(./blocks/element/__down-sector/element__down-sector.css);
+@import url(./blocks/element/__like-button/element__like-button.css);
+@import url(./blocks/element/__title/element__title.css);
+@import url(./blocks/element/__delete-button/element__delete-button.css);
+@import url(./blocks/element/__delete-button/_visible/element__delete-button_visible.css);
+@import url(./blocks/element/__delete-button/_hidden/element__delete-button_hidden.css);
+@import url(./blocks/element/__like-button/_active/element__like-button_active.css);
+
+@import url(./blocks/elements/elements.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__button-close/popup__button-close.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/_full-image/popup_full-image.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/popup__container-image/popup__container-image.css);
+@import url(./blocks/popup/__container/_tooltip/popup__container_tooltip.css);
+@import url(./blocks/popup/__container-title/popup__container-title.css);
+@import url(./blocks/popup/__container-title/_mb/.popup__container-title_mb.css);
+@import url(./blocks/popup/__container-title/_mb-reset/popup__container-title_mb-reset.css);
+@import url(./blocks/popup/__input/popup__input.css);
+@import url(./blocks/popup/__container-submit-button/popup__container-submit-button.css);
+@import url(./blocks/popup/__container-submit-button/_delete-button/.popup__container-submit-button_delete-button.css);
+@import url(./blocks/popup/__container-submit-button/popup__container-submit-button_inactive.css);
+@import url(./blocks/popup/__form/popup__form.css);
+@import url(./blocks/popup/__input/popup__input-error_active.css);
+@import url(./blocks/popup/__input/popup__input_type_error.css);
+
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/_white/_whte.css);
+@import url(./blocks/auth/_m50/_m50.css);
+@import url(./blocks/auth/_black/_black.css);
+@import url(./blocks/auth/_auth-button/_auth-button.css);
+@import url(./blocks/auth/__link/auth__link.css);
+@import url(./blocks/auth/__link/_color/auth__link_color.css);
+
+@import url(./blocks/full-image/full-image.css);
+@import url(./blocks/full-image/__image/full-image__image.css);
+@import url(./blocks/full-image/__container/full-image__container.css);
+@import url(./blocks/full-image/__caption/full-image__caption.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__text/footer__text.css);

@@ -1,0 +1,12 @@
+._auth-button {
+    margin-top: 216px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+}
+
+@media screen and (max-width: 444px) {
+    ._auth-button {
+        margin-top: 173px;
+    }
+}
