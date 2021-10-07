@@ -6,7 +6,6 @@ module.exports.settingMongoose = {
   useUnifiedTopology: true,
 };
 module.exports.SALT_ROUNDS = 10;
-module.exports.JWT_SECRET = 'cdjnjhbylnehgjrrby';
 module.exports.UNAUTHORISED = 401;
 module.exports.DOUBLE_ADMIN = 409;
 module.exports.BAD_REQUEST_ERROR_CODE = 400;

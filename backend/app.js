@@ -1,11 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-undef */
 const express = require('express');
 
 const app = express();
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const { celebrate, Joi, errors } = require('celebrate');
-const { login, createUser } = require('./controllers/users');
+const { login, createUser, logout } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -22,11 +27,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
 
 app.use(cors({
-  origin: ['http://ravil377.nomoredomains.monster', 'http://ravil377.nomoredomains.monster'],
+  origin: [
+    'http://ravil377.nomoredomains.monster',
+    'http://ravil377.nomoredomains.monster',
+    'http://localhost:3000',
+    'http://localhost:3001',
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
@@ -41,6 +57,8 @@ app.post('/signup', celebrate({
     email: Joi.string().required().email(),
   }),
 }), createUser);
+
+app.post('/logout', logout);
 
 app.use(auth);
 

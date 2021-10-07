@@ -9,6 +9,8 @@ const InternalServerError = require('../errors/internal-server-err');
 const UserIsRegistered = require('../errors/user-is-registered-err');
 const AuthError = require('../errors/auth-err');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const {
   VALIDATION_ERROR,
   CAST_ERROR,
@@ -19,7 +21,6 @@ const {
   INCORRECT_DATA_UPDATING_PROFILE_MESSAGE,
   NOT_FOUND_LOGIN_MESSAGE,
   SALT_ROUNDS,
-  JWT_SECRET,
   UNAUTHORISED_ERROR_MESSAGE,
 } = require('../utils/const');
 
@@ -93,7 +94,7 @@ module.exports.login = (req, res, next) => {
 
   User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'secret', { expiresIn: '7d' });
       res
         .status(200)
         .cookie('jwt', token, {
@@ -103,6 +104,16 @@ module.exports.login = (req, res, next) => {
         .send({ message: 'Пользователь залогинен' });
     })
     .catch(() => next(new AuthError(UNAUTHORISED_ERROR_MESSAGE)));
+};
+
+module.exports.logout = (req, res) => {
+  res
+    .status(200)
+    .cookie('jwt', 'token', {
+      maxAge: -1,
+      httpOnly: true,
+    })
+    .send({ message: 'Пользователь разлогинен' });
 };
 
 module.exports.updateUser = (req, res, next) => {

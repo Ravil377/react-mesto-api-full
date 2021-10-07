@@ -31,20 +31,20 @@ function App() {
     const history = useHistory();
 
     React.useEffect(() => {
-        api.getProfileInfo()
-            .then((res) => setCurrentUser(res))
-            .catch((err) => console.log(err));
-    }, []);
-
-    React.useEffect(() => {
         api.checkToken()
             .then((res) => {
-                setIsEmail(res.data.email);
+                setIsEmail(res.email);
                 setLoggedIn(true);
                 history.push("/main");
             })
             .catch((err) => console.log(err));
     }, [history]);
+
+    React.useEffect(() => {
+        api.getProfileInfo()
+            .then((res) => setCurrentUser(res))
+            .catch((err) => console.log(err));
+    }, []);
 
     React.useEffect(() => {
         api.getInitialCards()
@@ -69,7 +69,7 @@ function App() {
     };
 
     const handleCardLike = (props) => {
-        const isLiked = props.likes.some((i) => i._id === currentUser._id);
+        const isLiked = props.likes.some((i) => i === currentUser._id);
         api.changeLikeCardStatus(props._id, isLiked)
             .then((newCard) => {
                 setCards((state) => state.map((card) => (card._id === props._id ? newCard : card)));
@@ -129,19 +129,22 @@ function App() {
     };
 
     const handleClickExit = () => {
-        localStorage.removeItem("jwt");
-        setIsEmail(null);
-        setLoggedIn(false);
+        api.logout()
+            .then((res) => {
+                setIsEmail(null);
+                setLoggedIn(false);
+                history.push("/sign-in");
+            })
+            .catch((err) => console.log(err));
     };
 
     const handleLoginUser = (email, password) => {
         api.login(email, password)
             .then((res) => {
-                if (res.token) {
-                    localStorage.setItem("jwt", res.token);
+                if (res.message === "Пользователь залогинен") {
                     setLoggedIn(true);
-                    setIsEmail(email);
                     history.push("/main");
+                    setIsEmail(res.email);
                 }
             })
             .catch((err) => {
