@@ -21,6 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
 
+app.use(cors({
+  origin: ['http://ravil377.nomoredomains.monster', 'http://ravil377.nomoredomains.monster'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     password: Joi.string().min(8).required(),
