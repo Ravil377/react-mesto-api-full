@@ -126,9 +126,8 @@ class Api {
 }
 
 const apiOptions = {
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-24",
-    authUrl: "https://auth.nomoreparties.co/",
-    authorization: "ebb98a36-70e4-466a-8500-5c6ce9301133",
+    baseUrl: 'http://ravil377.nomoredomains.monster/',
+    authUrl: "http://ravil377.nomoredomains.monster/"
 };
 
 const api = new Api(apiOptions);
