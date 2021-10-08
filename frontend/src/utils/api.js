@@ -91,7 +91,7 @@ class Api {
     }
 
     login(userEmail, userPassword) {
-        return fetch(`${this._options.authUrl}/signin`, {
+        return fetch(`${this._options.baseUrl}/signin`, {
             method: "POST",
             credentials:'include',
             headers: {
@@ -105,7 +105,7 @@ class Api {
     }
 
     logout() {
-        return fetch(`${this._options.authUrl}/logout`, {
+        return fetch(`${this._options.baseUrl}/logout`, {
             method: "POST",
             credentials:'include',
             headers: {
@@ -115,7 +115,7 @@ class Api {
     }
 
     register(userEmail, userPassword) {
-        return fetch(`${this._options.authUrl}/signup`, {
+        return fetch(`${this._options.baseUrl}/signup`, {
             method: "POST",
             credentials:'include',
             headers: {
@@ -129,7 +129,7 @@ class Api {
     }
 
     checkToken() {
-        return fetch(`${this._options.authUrl}/users/me`, {
+        return fetch(`${this._options.baseUrl}/users/me`, {
             method: "GET",
             credentials:'include',
             headers: {
@@ -139,15 +139,14 @@ class Api {
     }
 }
 
-// const apiOptions = {
-//     baseUrl: 'http://ravil377.nomoredomains.monster/',
-//     authUrl: "http://ravil377.nomoredomains.monster/"
-// };
-
 const apiOptions = {
-    baseUrl: 'http://localhost:3000',
-    authUrl: "http://localhost:3000"
+    baseUrl: 'http://ravil377.nomoredomains.monster',
 };
+
+// const apiOptions = {
+//     baseUrl: 'http://localhost:3000',
+//     authUrl: "http://localhost:3000"
+// };
 
 
 const api = new Api(apiOptions);

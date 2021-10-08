@@ -33,9 +33,9 @@ function App() {
     React.useEffect(() => {
         api.checkToken()
             .then((res) => {
-                setIsEmail(res.email);
                 setLoggedIn(true);
                 history.push("/main");
+                setIsEmail(res.email);
             })
             .catch((err) => console.log(err));
     }, [history]);
@@ -143,8 +143,8 @@ function App() {
             .then((res) => {
                 if (res.message === "Пользователь залогинен") {
                     setLoggedIn(true);
-                    history.push("/main");
                     setIsEmail(res.email);
+                    history.push("/main");
                 }
             })
             .catch((err) => {

@@ -29,7 +29,7 @@ app.use(requestLogger);
 app.use(cors({
   origin: [
     'http://ravil377.nomoredomains.monster',
-    'http://ravil377.nomoredomains.monster',
+    'http://ravil377-front.nomoredomains.monster',
     'http://localhost:3000',
     'http://localhost:3001',
   ],
