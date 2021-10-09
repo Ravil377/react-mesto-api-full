@@ -101,7 +101,7 @@ module.exports.login = (req, res, next) => {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
         })
-        .send({ message: 'Пользователь залогинен' });
+        .send({ email: user.email, message: 'Пользователь залогинен' });
     })
     .catch(() => next(new AuthError(UNAUTHORISED_ERROR_MESSAGE)));
 };

@@ -12,6 +12,7 @@ class Api {
 
     getProfileInfo() {
         return fetch(`${this._options.baseUrl}/users/me`, {
+            method: "GET",
             credentials:'include',
             headers: {
                 'Content-Type': 'application/json',

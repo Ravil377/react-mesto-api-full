@@ -44,15 +44,17 @@ function App() {
         api.getProfileInfo()
             .then((res) => setCurrentUser(res))
             .catch((err) => console.log(err));
-    }, []);
+    }, [loggedIn, history]);
 
     React.useEffect(() => {
-        api.getInitialCards()
-            .then((res) => {
-                setCards(res);
-            })
-            .catch((err) => console.log(err));
-    }, []);
+        if(loggedIn) {
+            api.getInitialCards()
+                .then((res) => {
+                    setCards(res);
+                })
+                .catch((err) => console.log(err));
+        }
+    }, [loggedIn, history]);
 
     const handleDeleteCard = () => {
         api.deleteCard(selectedCardForDelete._id)
@@ -142,9 +144,10 @@ function App() {
         api.login(email, password)
             .then((res) => {
                 if (res.message === "Пользователь залогинен") {
-                    setLoggedIn(true);
-                    setIsEmail(res.email);
-                    history.push("/main");
+                        setLoggedIn(true);
+                        setIsEmail(res.email);
+
+                        history.push("/");                     
                 }
             })
             .catch((err) => {
