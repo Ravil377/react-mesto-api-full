@@ -124,7 +124,6 @@ module.exports.updateUser = (req, res, next) => {
     {
       new: true,
       runValidators: true,
-      upsert: true,
     },
   )
     .then((user) => res.send(user))
@@ -147,7 +146,6 @@ module.exports.updateAvatar = (req, res, next) => {
     {
       new: true,
       runValidators: true,
-      upsert: true,
     },
   )
     .then((user) => res.send(user))

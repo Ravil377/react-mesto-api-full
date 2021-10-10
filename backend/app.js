@@ -28,10 +28,10 @@ app.use(requestLogger);
 
 app.use(cors({
   origin: [
-    'http://ravil377.nomoredomains.monster',
-    'http://ravil377-front.nomoredomains.monster',
-    'http://localhost:3000',
-    'http://localhost:3001',
+    'https://ravil377.nomoredomains.monster',
+    'https://ravil377-front.nomoredomains.monster',
+    'https://localhost:3000',
+    'https://localhost:3001',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -55,6 +55,9 @@ app.post('/signup', celebrate({
   body: Joi.object().keys({
     password: Joi.string().required(),
     email: Joi.string().required().email(),
+    name: Joi.string().min(2).max(30),
+    about: Joi.string().min(2).max(30),
+    avatar: Joi.string().pattern(/^(http|https):\/\/(www.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\.[\w\/]+#?/),
   }),
 }), createUser);
 
